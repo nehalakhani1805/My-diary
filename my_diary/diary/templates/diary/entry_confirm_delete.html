@@ -1,0 +1,11 @@
+{% extends "diary/base.html" %}
+
+{% block content %}
+<form method="POST">
+  {% csrf_token %}
+  <h2>Are you sure you want to delete "{{ object.title }}"</h2>
+  <div>
+  <button class="btn btn-danger" type="submit"> Yes</button>
+  <a href="{% url 'detail' object.id %}" class="btn btn-secondary">No</a>
+</form>
+{% endblock %}
